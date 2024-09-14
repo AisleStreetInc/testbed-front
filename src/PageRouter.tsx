@@ -5,7 +5,7 @@ const HomePage = lazy(() => import("./page/Home"));
 
 const PageRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Suspense>
         <Routes>
           <Route path="/" element={<HomePage />} />
