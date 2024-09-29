@@ -1,9 +1,10 @@
 import { useState } from "react";
+import PublicSection from "../PublicSection";
 
 const MainSection = () => {
   const [selectedItem, setSelectedItem] = useState("Me");
   return (
-    <section className="w-[70%] px-4 text-black pt-4 relative">
+    <section className="w-[70%] px-4 text-black pt-4 relative overflow-y-scroll">
       <div className="sticky top-0 flex items-center justify-center w-full gap-2">
         <button
           type="button"
@@ -23,6 +24,9 @@ const MainSection = () => {
         >
           Public
         </button>
+      </div>
+      <div className="w-full">
+        {selectedItem === "Public" ? <PublicSection /> : null}
       </div>
     </section>
   );

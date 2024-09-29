@@ -3,14 +3,33 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import PageRouter from "./PageRouter";
+import {
+  QueryClient,
+  QueryClientProvider,
+  QueryErrorResetBoundary,
+} from "@tanstack/react-query";
+import GlobalModal from "./components/Modal/GlobalModal";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      throwOnError: true,
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <PageRouter />
-  </React.StrictMode>
+  <QueryClientProvider client={queryClient}>
+    <QueryErrorResetBoundary>
+      <React.StrictMode>
+        <PageRouter />
+        <GlobalModal />
+      </React.StrictMode>
+    </QueryErrorResetBoundary>
+  </QueryClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
