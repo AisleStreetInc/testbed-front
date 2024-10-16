@@ -4,7 +4,7 @@ import MainSection from "../../containers/home/MainSection";
 
 const HomePage = () => {
   return (
-    <main className="min-w-full text-black h-dvh">
+    <main className="relative min-w-full text-black h-dvh">
       <Header />
       <div className="flex w-full">
         <NavigationBar />

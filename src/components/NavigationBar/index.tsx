@@ -37,7 +37,7 @@ const DataContainer = () => {
 
 const NavigationBar = () => {
   return (
-    <nav className="sticky top-16 left-0 w-[30%] h-[calc(100dvh-4rem)] bg-gray-200 pl-3 py-2">
+    <nav className="sticky top-16 left-0 w-[30%] h-[calc(100dvh-4rem)] bg-gray-200 pl-3 py-2 overflow-y-scroll">
       <ErrorBoundary fallback={<div>error</div>}>
         <Suspense fallback={<div>...Loading</div>}>
           <DataContainer />
